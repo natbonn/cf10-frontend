@@ -1,3 +1,4 @@
+@if (!doNotShowRest) {
 <div class="constainer mt-4">
   <div class="d-flex gap-5 align-items-center">
     <div class="bg-info p-2">
@@ -43,23 +44,30 @@
 <!-- Add child step3-person-table-input -->
 
 <div class="container mt-2 bg-success">
-  <app-step3-person-table-input [person]="person1"></app-step3-person-table-input>
-  <app-step3-person-table-input></app-step3-person-table-input>
-  <app-step3-person-table-input [person]="person2"></app-step3-person-table-input>
+<app-step3-person-table-input [person]="person1"></app-step3-person-table-input>
+<app-step3-person-table-input></app-step3-person-table-input>
+<app-step3-person-table-input [person]="person2"></app-step3-person-table-input>
 </div>
 
 <!-- Add child step4-for-directive -->
- <div class="container mt-2">
-  <h3>From Step4 Component</h3>
-  <app-step4-for-directive></app-step4-for-directive>
- </div>
+<div class="container mt-2">
+<h3>From Step4 Component</h3>
+<app-step4-for-directive></app-step4-for-directive>
+</div>
 
- <!-- Add child Step5 Event Bind -->
-  <div class="container">
-    <h3>From Step5 Component</h3>
-    <app-step5-event-bind></app-step5-event-bind>
+<!-- Add child Step5 Event Bind -->
+<div class="container">
+  <h3>From Step5 Component</h3>
+  <app-step5-event-bind></app-step5-event-bind>
+</div>
+} @else {
+<div class="container mt-2">
+  <app-navbar></app-navbar>
+  <div class="d-flex flex-row gap-2 mt-2">
+    <app-step7-list-group-menu class="w-25"></app-step7-list-group-menu>
+    <div class="flex-grow-1 p-2 w-75">
+      <router-outlet ></router-outlet>
+    </div>
   </div>
-
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+</div>
+}
